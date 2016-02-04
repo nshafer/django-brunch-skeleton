@@ -17,5 +17,28 @@ Getting Started
 
     brunch build
 
-4. Install [django-brunch](https://github.com/nshafer/django-brunch) to integrate running `brunch watch`
+4. Add brunch's output directory `brunch/` to the STATICFILES_DIRS list so that Django will find the files that Brunch
+will create. Remove any existing reference to `static/` since we now only want to include assets handled by brunch.
+
+    ```python
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "brunch"),
+    ]
+    ```
+
+5. Link the brunch output in your templates
+
+    ```html
+    <link rel="stylesheet" href="{% static "app.css" %}"/>
+    <script src="{% static "app.js" %}"></script>
+    ```
+
+6. Install [django-brunch](https://github.com/nshafer/django-brunch) to integrate running `brunch watch`
 with `./manage.py runserver`
+
+
+Customization
+-------------
+
+Customize brunch-config.js to suit your use. Add extra template directories to watch in `paths.watched` so that you can
+have live reloading goodness when editing templates.
