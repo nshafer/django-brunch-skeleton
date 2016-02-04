@@ -8,14 +8,18 @@ Getting Started
 
 1. Initialize brunch in your Django Project Directory
 
+    ```
     cd myproject
     brunch new -s https://github.com/nshafer/django-brunch-skeleton
+    ```
 
 2. Put your CSS and JS files in `static/`, images and other files in `static/assets/`
 
 3. Test brunch
 
+    ```
     brunch build
+    ```
 
 4. Add brunch's output directory `brunch/` to the STATICFILES_DIRS list so that Django will find the files that Brunch
 will create. Remove any existing reference to `static/` since we now only want to include assets handled by brunch.
