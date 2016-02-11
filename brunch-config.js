@@ -7,8 +7,8 @@ exports.config = {
             // To use a separate vendor.js bundle, specify two files path
             // https://github.com/brunch/brunch/blob/stable/docs/config.md#files
             // joinTo: {
-            //  "js/app.js": /^(static\/js)/,
-            //  "js/vendor.js": /^(static\/vendor)|(deps)/
+            //  "app.js": /^(static\/js)/,
+            //  "vendor.js": /^(static\/vendor|bower_components|node_modules)/
             // }
             //
             // To change the order of concatenation of files, explicitly mention here
@@ -33,7 +33,9 @@ exports.config = {
         watched: [
             'static',
             'templates'
-            // Add any more template directories here
+            // Add any more static and/or template directories here. Examples:
+            //'myapp/static',
+            //'myapp/templates',
         ],
 
         public: 'brunch'
