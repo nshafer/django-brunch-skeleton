@@ -13,12 +13,14 @@ This sets up a Brunch config with defaults set to work well with
 
 Brunch is configured to watch for files and changes in
 
-- static/
+- app/
+- test/
+- vendor/
 - templates/
 
 Output is written to:
 
-- brunch/
+- public/
 
 ## Files
 

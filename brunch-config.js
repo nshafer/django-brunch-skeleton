@@ -1,22 +1,21 @@
 exports.config = {
-    // See http://brunch.io/#documentation for docs.
+    // See http://brunch.io/docs/getting-started for docs.
     files: {
         javascripts: {
             joinTo: 'app.js'
 
             // To use a separate vendor.js bundle, specify two files path
-            // https://github.com/brunch/brunch/blob/stable/docs/config.md#files
+            // http://brunch.io/docs/config#-files-
             // joinTo: {
-            //  "app.js": /^(static\/js)/,
-            //  "vendor.js": /^(static\/vendor|bower_components|node_modules)/
+            //     "app.js": /^app/,
+            //     "vendor.js": /^(?!app)/
             // }
             //
-            // To change the order of concatenation of files, explicitly mention here
-            // https://github.com/brunch/brunch/tree/master/docs#concatenation
+            // To change the order of concatenation of files
             // order: {
             //   before: [
-            //     "static/vendor/js/jquery-2.1.1.js",
-            //     "static/vendor/js/bootstrap.min.js"
+            //     "vendor/js/jquery-x.x.x.js",
+            //     "vendor/js/bootstrap.min.js"
             //   ]
             // }
         },
@@ -31,25 +30,18 @@ exports.config = {
     // Django paths
     paths: {
         watched: [
-            'static',
-            'templates'
-            // Add any more static and/or template directories here. Examples:
-            //'myapp/static',
+            'app', 'test', 'vendor',  // Default directories
+            'templates'  // Watch for changes to template files
+            // Add any more template directories here. Examples:
             //'myapp/templates',
-        ],
-
-        public: 'brunch'
+        ]
     },
 
     // Automatically require modules
     modules: {
         autoRequire: {
-            // Uncomment the following line to automatically run javascript you write in 'static/js/main.js'
-            //"app.js": ["static/js/main"]
+            // Uncomment the following line to automatically run javascript you write in 'app/main.js'
+            //"app.js": ["main"]
         }
-    },
-
-    npm: {
-        enabled: true
     }
 };
