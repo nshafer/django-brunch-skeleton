@@ -2,19 +2,18 @@
   "name": "your-app",
   "description": "Description",
   "author": "Your Name",
-  "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "start": "brunch watch --server"
+    "start": "brunch watch --server",
+    "build": "brunch build",
+    "debug": "brunch build --debug",
+    "compile": "brunch build -p"
   },
   "dependencies": {
-    "auto-reload-brunch": ">= 1.0 < 1.9",
-    "clean-css-brunch": ">= 1.0 < 1.9",
-    "css-brunch": ">= 1.0 < 1.9",
-    "javascript-brunch": ">= 1.0 < 1.9",
-    "uglify-js-brunch": ">= 1.0 < 1.9"
+    "brunch": "^2",
+    "clean-css-brunch": "^2",
+    "uglify-js-brunch": "^2",
+    "auto-reload-brunch": "^2"
   }
 }
